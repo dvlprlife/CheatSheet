@@ -3,7 +3,9 @@
 ##  Table of Contents
 
 1. [Docker Containers](#Docker-Containers)
+    
     a. [List Running Containers](#list-running-containers)
+    
     b. [List All Containers](#list-all-containers)
 2.
 
