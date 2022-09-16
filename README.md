@@ -1,7 +1,7 @@
 # CheatSheet
 A CheatSheet for working with and managing Business Central and other tidbits
 
-[BCContainerHelper](/BCContainerHelper/index.md)
+[BCContainerHelper](/BCContainerHelper/Index.md)
 
 [Docker](/Docker/Index.md)
 
