@@ -1,12 +1,8 @@
 # CheatSheet
 A CheatSheet for working with and managing Business Central and other tidbits
 
-[BCContainerHelper](/BCContainerHelper/Index.md)
-
-[Docker](/Docker/Index.md)
-
-[Git](/Git/Index.md)
-
-[PowerShell](/PowerShell/Index.md)
-
-[SQL](/SQL/Index.md)
+1. [BCContainerHelper](/BCContainerHelper/Index.md)
+2. [Docker](/Docker/Index.md)
+3. [Git](/Git/Index.md)
+4. [PowerShell](/PowerShell/Index.md)
+5. [SQL](/SQL/Index.md)
