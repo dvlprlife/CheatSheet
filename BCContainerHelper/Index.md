@@ -15,5 +15,9 @@
 
     Uninstall-Module BCContainerHelper
 
+## Container Management
+
+### Import-BcContainerLicense
+     Import-BcContainerLicense -licenseFile $licensefile -containerName $containername 
 
 Install-NAVSipCryptoProviderFromBcContainer
