@@ -20,8 +20,8 @@
 ### Import-BcContainerLicense
      Import-BcContainerLicense -licenseFile $licensefile -containerName $containername 
 
-###  Remove-NavContainer
-      Remove-NavContainer $containername 
+###  Remove-BCContainer
+      Remove-BCContainer $containername 
  
 
 Install-NAVSipCryptoProviderFromBcContainer
