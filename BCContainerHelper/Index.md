@@ -2,6 +2,7 @@
 
 ##  Table of Contents
 1.  [BCContainerHelper Installation](#BCContainerHelper-Installation)
+2.  [Container Management](#container-management)
 
 ***
 
@@ -18,10 +19,16 @@
 ## Container Management
 
 ### Import-BcContainerLicense
-     Import-BcContainerLicense -licenseFile $licensefile -containerName $containername 
+     Import-BcContainerLicense -licenseFile $licensefile -containerName $containername
 
 ###  Remove-BcContainer
-      Remove-BcContainer $containername 
- 
+      Remove-BcContainer $containername
+
+### Get-BCArtifactUrl
+    $artifactUrl = Get-BCArtifactUrl -version 21 -country "us" -select Latest -type Sandbox
+    $artifactUrl = Get-BCArtifactUrl  -country "us" -select Latest -type Sandbox -storageAccount BcPublicPreview
+
+### Flush-ContainerHelperCache
+    Flush-ContainerHelperCache -cache bcartifacts -keepDays 7
 
 Install-NAVSipCryptoProviderFromBcContainer
