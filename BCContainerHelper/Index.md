@@ -26,9 +26,15 @@
 
 ### Get-BCArtifactUrl
     $artifactUrl = Get-BCArtifactUrl -version 21 -country "us" -select Latest -type Sandbox
+    $artifactUrl = Get-BCArtifactUrl -version 20.4.0.0 -country "us" -select Closest -type OnPrem 
     $artifactUrl = Get-BCArtifactUrl  -country "us" -select Latest -type Sandbox -storageAccount BcPublicPreview
 
 ### Flush-ContainerHelperCache
     Flush-ContainerHelperCache -cache bcartifacts -keepDays 7
+
+## App Management
+
+### Get-BcContainerAppRuntimePackage 
+     Get-BcContainerAppRuntimePackage -appFile $appFilePathName -appName $appName -containerName $containerName 
 
 Install-NAVSipCryptoProviderFromBcContainer
