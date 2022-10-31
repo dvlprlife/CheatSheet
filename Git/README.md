@@ -20,11 +20,21 @@
      git config –-get user.email
      git config –-get user.name
 
-### **Create Tag**
+### Log
+
+#### Display Commit Log
+    git log --pretty=oneline
+    
+### **Tags**
+---
+#### **Create Tag**
     git tag -a v21.0.0.0 -m "App Version 21.0.0.0"
 
-### **Delete Tag**
+#### **Delete Tag**
     git tag -d v21.0.0.0
 
-### **List Tags**
+#### **List Tags**
     git tag -l
+
+#### **Tag commit""
+    git tag -a <description> <checksum of commit>
