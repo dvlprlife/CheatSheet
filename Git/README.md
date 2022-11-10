@@ -24,7 +24,9 @@
 
 #### Display Commit Log
     git log --pretty=oneline
-    
+
+#### Display Commit Information
+    git show <commit id> (--stat)
 ### **Tags**
 ---
 #### **Create Tag**
@@ -36,5 +38,5 @@
 #### **List Tags**
     git tag -l
 
-#### **Tag commit""
+#### **Tag Commit**
     git tag -a <description> <checksum of commit>
