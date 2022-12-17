@@ -33,7 +33,11 @@
     Flush-ContainerHelperCache -cache bcartifacts -keepDays 7
     
 ### Setup-BcContainerTestUsers 
-     Setup-BcContainerTestUsers -containerName $containerName -select Essential|Premium -Password $Password 
+    $Password = 'password'
+    $SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
+
+    Setup-BcContainerTestUsers -containerName BC20-Test -select Premium -Password $SecurePassword 
+
 
 ## App Management
 
