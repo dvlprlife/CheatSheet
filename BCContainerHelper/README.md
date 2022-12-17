@@ -35,8 +35,10 @@
 ### Setup-BcContainerTestUsers 
     $Password = 'password'
     $SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
+    $Credential = New-Object System.Management.Automation.PSCredential ($UserName, $SecurePassword)
 
-    Setup-BcContainerTestUsers -containerName BC20-Test -select Premium -Password $SecurePassword 
+    Setup-BcContainerTestUsers -containerName BC20-Test -select Premium -Password $SecurePassword -credential $Credential 
+
 
 
 ## App Management
