@@ -19,7 +19,7 @@
 ## Container Management
 
 ### Import-BcContainerLicense
-     Import-BcContainerLicense -licenseFile $licensefile -containerName $containername
+     Import-BcContainerLicense -licenseFile $licensefile -containerName $containerName
 
 ###  Remove-BcContainer
       Remove-BcContainer $containername
@@ -31,6 +31,9 @@
 
 ### Flush-ContainerHelperCache
     Flush-ContainerHelperCache -cache bcartifacts -keepDays 7
+    
+### Setup-BcContainerTestUsers 
+     Setup-BcContainerTestUsers -containerName $containerName -select Essential|Premium -Password $Password 
 
 ## App Management
 
