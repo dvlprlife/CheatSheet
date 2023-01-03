@@ -3,6 +3,9 @@
 ##  Table of Contents
 1.  [BCContainerHelper Installation](#BCContainerHelper-Installation)
 2.  [Container Management](#container-management)
+3.  [App Management](#app-managment)
+4.  [Extension Management](#extension-management)
+5.  
 
 ***
 
