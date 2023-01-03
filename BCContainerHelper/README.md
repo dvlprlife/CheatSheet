@@ -46,4 +46,11 @@
 ### Get-BcContainerAppRuntimePackage 
      Get-BcContainerAppRuntimePackage -appFile $appFilePathName -appName $appName -containerName $containerName 
 
+## Extension Management
+
+###  Publish-BcContainerApp 
+     Publish-BcContainerApp -appFile $appFilePathName -containerName $containerName (-skipVerification) (-install) (-sync)
+     
+
+
 Install-NAVSipCryptoProviderFromBcContainer
