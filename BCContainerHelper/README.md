@@ -39,7 +39,7 @@
     $SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
     $Credential = New-Object System.Management.Automation.PSCredential ($UserName, $SecurePassword)
 
-    Setup-BcContainerTestUsers -containerName BC20-Test -select Premium -Password $SecurePassword -credential $Credential 
+    Setup-BcContainerTestUsers -containerName $containerName -select Premium -Password $SecurePassword -credential $Credential 
 
 
 
