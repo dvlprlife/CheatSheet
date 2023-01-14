@@ -30,13 +30,15 @@
 ### **Tags**
 ---
 #### **Create Tag**
+    git tag -a <tagname> -m <messge
     git tag -a v21.0.0.0 -m "App Version 21.0.0.0"
 
 #### **Delete Tag**
+    git tag -d <tagname>
     git tag -d v21.0.0.0
 
 #### **List Tags**
     git tag -l
 
 #### **Tag Commit**
-    git tag -a <description> <checksum of commit>
+    git tag -a <tagname> -m <messge> <checksum of commit>
