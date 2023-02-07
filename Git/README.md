@@ -30,8 +30,8 @@
 ### **Tags**
 ---
 #### **Create Tag**
-    git tag -a <tagname> -m <messge>
-    git tag -a v21.0.0.0 -m "App Version 21.0.0.0"
+    git tag -a <tagname> -m <messge> <commit id>
+    git tag -a v21.0.0.0 -m "App Version 21.0.0.0" 9dad5ec4d1d1de8438eda39fd5f6b6a4fdb25273
 
 #### **Delete Tag**
     git tag -d <tagname>
