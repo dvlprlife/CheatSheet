@@ -19,6 +19,9 @@
     g. [Restart Container](#restart-container)
 
     h. [Remove Container](#remove-container)
+    
+2. [Misc](#Misc)
+    a. [HyperV](#HyperV)
 
 ***
 
@@ -50,4 +53,9 @@
 
 ### Remove Container
     docker rm CONTAINER
+ 
+## Misc
+
+### HyperV
+    Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V', "Containers") -All
 
