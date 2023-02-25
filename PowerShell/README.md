@@ -28,7 +28,7 @@
     $fullName = $firstName + " " + $lastName
     
 ## Dictionaries (key-value)
-     $name = @{ firstName = "John"; lastName = "Doe"}
+    $name = @{ firstName = "John"; lastName = "Doe"}
     "Name First Name " + $name.firstName;
     "Name Full Name " + $name.firstName + " " + $name.lastName;
 
