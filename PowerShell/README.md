@@ -87,3 +87,33 @@
 
      [decimal]$price = Read-Host "What is the price?"
      "The price of $price is too expensive" 
+
+## Conditional
+     $number = 10
+
+     if ($number -eq 10) {"equal"}
+     if ($number -ne 10) {"not equal"}
+     if ($number -gt 10) {"greater than"}
+     if ($number -ge 10) {"greater than or equal to"}
+     if ($number -lt 10) {"less than"}
+     if ($number -le 10) {"less than or equal to"}
+
+     if ("red" -in "red","green","blue"){
+          "In"
+     } else {
+          "Not in"
+     }
+
+     if ("yellow" -notin "red","green","blue") {
+          "Not in"
+     } else {
+          "In"
+     }
+
+     # boolean values
+     $isActive = $true
+     $isGood = $false
+
+     if ($isActive) {
+          "Active"
+     } 
