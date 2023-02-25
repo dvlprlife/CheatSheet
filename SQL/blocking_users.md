@@ -3,7 +3,7 @@
 -- #################################################
 
     SELECT
-        spid
+      spid
     , loginame
     , nt_username
     , hostname
@@ -21,7 +21,9 @@
         sys.sysprocesses
     WHERE
     (blocked > 0) or (waitresource != '')
-UNION
+    
+    UNION
+
     SELECT
         spid
     , loginame
