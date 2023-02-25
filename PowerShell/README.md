@@ -69,9 +69,9 @@
     foreach($color in $colors){
         Write-Host $color
     }   
-    
-    
+      
    $names = "John","Jane","Bob"
+   
    $namesubset = $names[0..1]
     
     foreach($subset in $namesubset){
