@@ -57,23 +57,33 @@
 
 ## Lists     
  
-    $colors = @("red","orange","yellow","green","blue")
+     $colors = @("red","orange","yellow","green","blue")
 
-    #first
-    Write-Host -ForegroundColor $colors[0] $colors[0]
-    #last
-    Write-Host -ForegroundColor $colors[-1] $colors[-1]
+     #first
+     Write-Host -ForegroundColor $colors[0] $colors[0]
+     #last
+     Write-Host -ForegroundColor $colors[-1] $colors[-1]
 
-    $colors += "violet"
+     $colors += "violet"
 
-    foreach($color in $colors){
-        Write-Host $color
-    }   
+     foreach($color in $colors){
+          Write-Host $color
+     }   
       
-   $names = "John","Jane","Bob"
+     $names = "John","Jane","Bob"
    
-   $namesubset = $names[0..1]
+     $namesubset = $names[0..1]
     
-    foreach($subset in $namesubset){
-        Write-Host $subset
-    }  
+     foreach($subset in $namesubset){
+          Write-Host $subset
+     }
+
+## Input 
+     $name = Read-Host "What is your name?"
+     "Hi $name!"
+
+     [int]$age = Read-Host "How old are you?"
+     "Wow! You are $age"
+
+     [decimal]$price = Read-Host "What is the price?"
+     "The price of $price is too expensive" 
