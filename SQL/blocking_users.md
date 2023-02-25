@@ -1,6 +1,6 @@
--- #################################################
--- Get a list of blocking users
--- #################################################
+    -- #################################################
+    -- Get a list of blocking users
+    -- #################################################
 
     SELECT
       spid
@@ -42,6 +42,6 @@
     FROM
         sys.sysprocesses
     WHERE
-spid in (SELECT blocked
+        spid in (SELECT blocked
     FROM sys.sysprocesses
     WHERE blocked > 0)
