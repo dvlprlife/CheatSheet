@@ -55,4 +55,25 @@
     Write-Host -ForegroundColor Green $student 
 
 
-     
+## Lists     
+ 
+    $colors = @("red","orange","yellow","green","blue")
+
+    #first
+    Write-Host -ForegroundColor $colors[0] $colors[0]
+    #last
+    Write-Host -ForegroundColor $colors[-1] $colors[-1]
+
+    $colors += "violet"
+
+    foreach($color in $colors){
+        Write-Host $color
+    }   
+    
+    
+   $names = "John","Jane","Bob"
+   $namesubset = $names[0..1]
+    
+    foreach($subset in $namesubset){
+        Write-Host $subset
+    }  
