@@ -1,7 +1,13 @@
 # PowerShell
 
 ##  Table of Contents
-1.
+1. [Credentials](#Credentials)
+2. [Files](#Files)
+3. [Strings](#Strings)
+4. [Dictionaries (key-value)](#Dictionaries-(key-value))
+5. [Lists](#Lists)
+6. [Input](#Input)
+7. [Conditional](#Conditional)
 
 ***
 ## Credentials
@@ -18,7 +24,7 @@
 ### Copy all files from folder to folder and subfolders
     Copy-Item -Path $sourceFolder\* -Destination $targetFolder -Recurse -Force
 
-### Strings
+## Strings
     "Helo World!"
     
     $msg = "Hello World!"
