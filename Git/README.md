@@ -3,9 +3,14 @@
 ##  Table of Contents
 1. [Set Global Username/Email Configuration](#set-global-usernameemail-configuration)
 2. [Set Repository-Specific Username/Email Configuration](#set-repository-specific-usernameemail-configuration)
-3. [Create Tag](#create-tag)
-4. [Delete Tag](#delete-tag)
-5. [List Tags](#list-tags)
+3. [Log](#log)
+    1. [Display Commit Log](#display-commit-log)
+    2. [Display Commit Information](#display-commit-information)
+4. [Tags](#tags)
+    1. [Create Tag](#create-tag)
+    2. [Delete Tag](#delete-tag)
+    3. [List Tags](#list-tags)
+    4. [Tag Commit](#tag-commit)
 
 ***
 
@@ -21,12 +26,13 @@
      git config –-get user.name
 
 ### Log
-
+---
 #### Display Commit Log
     git log --pretty=oneline
 
 #### Display Commit Information
     git show <commit id> (--stat)
+
 ### **Tags**
 ---
 #### **Create Tag**
