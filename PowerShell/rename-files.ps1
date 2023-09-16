@@ -20,7 +20,7 @@ Function rename-files {
     if (Test-Path -Path $path) {
         Get-ChildItem -path $path | Foreach-Object {
             if ($_ -is [System.IO.DirectoryInfo]) {
-                rename-files $_.FullName
+                rename-files $_.FullName $echo
             } else {
                 $newName = $_.Name -replace '[^A-Za-z0-9- \.\[\]]', ' '
                 $newName = $newName.ToLower() -replace ' ', '-'
