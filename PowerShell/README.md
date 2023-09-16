@@ -9,6 +9,7 @@
 5. [Lists](#Lists)
 6. [Input](#Input)
 7. [Conditional](#Conditional)
+8. [Logical Operators](#logical-operators)
 
 ### Scripts
 1. [Rename Files](rename-files.ps1)
@@ -127,3 +128,11 @@
      if ($isActive) {
           "Active"
      }
+
+## Logical Operators
+     $a = 10
+     $b = 15
+     $c = 20
+
+     ($a -gt $b) -and (($a -lt 20) -or ($b -lt 20)) # Result False
+     ($c -gt $b) -and (($a -lt 20) -or ($b -lt 20)) # Result True
