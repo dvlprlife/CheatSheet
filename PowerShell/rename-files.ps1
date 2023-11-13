@@ -27,11 +27,21 @@ Function rename-files {
                 $newName = $_.Name -replace '[^A-Za-z0-9- \.\[\]]', ' '
                 $newName = $newName.ToLower() -replace ' ', '-'
 
-                if (-not ($_.Name -ceq $newName)){
+                if ($_.Name -cne $newName){
                     if ($echo) {
-                        echo "renaming: $($_.Name)  to: $newName"
+                        echo "renaming: $($_.Name)  to: $($newName)"
                      }
-                    Rename-Item -Path $_.fullname -newname $($newName)
+
+                    # if it is a directory and only changing case an error will occur
+                    # rename to a temp filename and rename it to the lowercase namm
+                    if (($_ -is [System.IO.DirectoryInfo]) -and ($_.Name -eq $newName)) {
+                        $randomname = [System.IO.Path]::GetRandomFileName()
+                        $temp = Rename-Item -Path $_.fullname -newname $randomname -PassThru
+                        Rename-Item -Path $temp -newname $newName
+                    } else {
+                        Rename-Item -Path $_.fullname -newname $newName
+                    }
+
                 }
             }
 
