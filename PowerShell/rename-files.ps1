@@ -36,7 +36,7 @@ Function rename-files {
             }
 
             if ($_ -is [System.IO.DirectoryInfo]) {
-                rename-files $_.FullName $echo
+                rename-files $_.FullName $includeFolders $echo
             }
         }
     }
