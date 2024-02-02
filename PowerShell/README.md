@@ -10,7 +10,7 @@
 6. [Input](#Input)
 7. [Conditional](#Conditional)
 8. [Logical Operators](#logical-operators)
-9. [Execution Policy] (#execution-policy)
+9. [Execution Policy](#execution-policy)
 
 ### Scripts
 1. [Rename Files](rename-files.ps1)
