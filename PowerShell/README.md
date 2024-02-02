@@ -10,6 +10,7 @@
 6. [Input](#Input)
 7. [Conditional](#Conditional)
 8. [Logical Operators](#logical-operators)
+9. Execution Policy (#execution-policy)
 
 ### Scripts
 1. [Rename Files](rename-files.ps1)
@@ -136,3 +137,8 @@
 
      ($a -gt $b) -and (($a -lt 20) -or ($b -lt 20)) # Result False
      ($c -gt $b) -and (($a -lt 20) -or ($b -lt 20)) # Result True
+     
+## Execution Policy
+    Get-ExecutionPolicy -List
+    Set-ExecutionPolicy -ExecutionPolicy (AllSigned|Bypass|Default|RemoteSigned|Undefined|Unrestricted) -Scope (CurrentUser|LocalMachine|MachinePolicy|Process|UserPolicy)
+    
