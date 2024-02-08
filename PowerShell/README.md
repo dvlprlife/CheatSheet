@@ -14,6 +14,7 @@
 
 ### Scripts
 1. [Rename Files](rename-files.ps1)
+2. [Remove Files Older Than](remove-files-older-than.ps1)
 
 ***
 ## Credentials
@@ -137,8 +138,8 @@
 
      ($a -gt $b) -and (($a -lt 20) -or ($b -lt 20)) # Result False
      ($c -gt $b) -and (($a -lt 20) -or ($b -lt 20)) # Result True
-     
+
 ## Execution Policy
     Get-ExecutionPolicy -List
     Set-ExecutionPolicy -ExecutionPolicy (AllSigned|Bypass|Default|RemoteSigned|Undefined|Unrestricted) -Scope (CurrentUser|LocalMachine|MachinePolicy|Process|UserPolicy)
-    
+
