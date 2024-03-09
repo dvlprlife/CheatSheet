@@ -1,0 +1,54 @@
+## Binary files
+.Ds_Store
+Thumbs.db
+
+## Cache
+[Bb]in
+[Oo]bj
+cache_*
+~$*
+
+## Editor
+.vscode/
+
+# AL
+## Cache folder
+.alcache/
+
+## Symbols folder
+.alpackages/
+.packages/
+.dependencies/
+.buildartifacts/
+
+## Snapshots folder
+.snapshots/
+
+## Templates Folder
+.altemplates/
+
+## Testing Output folder
+.output/
+
+## Extension App-file
+*.app
+
+## Rapid Application Development File
+rad.json
+
+## Translation Base-file
+*.g.xlf
+
+## License-file
+*.flf
+*.bclicense
+
+## Test results file
+TestResults*.xml
+
+## BcptTestResultsFile
+bcptTestResults*.json
+
+## files
+debug.log
+BuildOutput.txt
