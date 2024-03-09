@@ -12,7 +12,8 @@
     2. [Delete Tag](#delete-tag)
     3. [List Tags](#list-tags)
     4. [Tag Commit](#tag-commit)
-
+6. Files
+    1. [al.gitignore](al.gitignore)
 ***
 
 ### **Set Global Username/Email Configuration**
@@ -27,8 +28,8 @@
     git config –-get user.name
 
 ### **Display Remote Repository URL**
-    git config –-get remote.origin.url 
-    
+    git config –-get remote.origin.url
+
 ### Log
 ---
 #### Display Commit Log
