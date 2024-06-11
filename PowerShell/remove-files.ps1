@@ -25,11 +25,9 @@ Function Remove-Files {
 
     if (Test-Path -Path $Path) {
         foreach ($filter in $arrayOfFilters) {
-            Get-ChildItem -Path $Path -Filter $filter -Recurse | Remove-Item -WhatIf
+            Get-ChildItem -Path $Path -Filter $filter -Recurse | Where-Object { ! $_.PSIsContainer } | Remove-Item -WhatIf
         }
     } else {
         write-Host "Path not found: $filePath"
     }
 }
-
-Remove-Files -filters "*.xlf" -path "C:\Users\BradPrendergast\Documents\git\dnw" 
