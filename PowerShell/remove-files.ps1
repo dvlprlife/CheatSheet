@@ -5,12 +5,13 @@
   This function removes files, based on extension, from the specified path.
   .PARAMETER path
   The full path to a folder.
-.PARAMETER filters
+ .PARAMETER filters
   File extension filters; comma separated.
   .PARAMETER echo
   Display the filename
   .EXAMPLE
-  clean-folders "c:\temp" $false
+  Remove-Files "c:\temp" "*.log,*.txt"
+  This example removes all files with the extensions .log and .txt from the folder c:\temp.
  #>
 Function Remove-Files {
     param (
@@ -25,9 +26,10 @@ Function Remove-Files {
 
     if (Test-Path -Path $Path) {
         foreach ($filter in $arrayOfFilters) {
-            Get-ChildItem -Path $Path -Filter $filter -Recurse | Where-Object { ! $_.PSIsContainer } | Remove-Item -WhatIf
+            Get-ChildItem -Path $Path -Filter $filter -Recurse | Where-Object { ! $_.PSIsContainer } | Remove-Item #-WhatIf
         }
-    } else {
+    }
+    else {
         write-Host "Path not found: $filePath"
     }
 }
