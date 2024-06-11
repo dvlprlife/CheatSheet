@@ -16,6 +16,7 @@
 1. [Rename Files](rename-files.ps1)
 2. [Remove Files Older Than](remove-files-older-than.ps1)
 3. [Get File List Size](Get-FileListSize.ps1)
+4. [Remove Files](remove-files.ps1)
 
 ***
 ## Credentials
