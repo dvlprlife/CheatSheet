@@ -48,6 +48,12 @@
         Restart-BcContainer -containerName $_
     } 
 
+### Stop all BcContainers
+    Get-BcContainers | foreach { 
+        Write-Host -ForegroundColor Yellow $_
+        Stop-BcContainer -containerName $_
+    } 
+
 
 ## App Management
 
