@@ -45,7 +45,7 @@
 ### Restart all BcContainers
      Get-BcContainers | foreach { 
         Write-Host -ForegroundColor Yellow $_
-        Restart-NavContainer -containerName $_
+        Restart-BcContainer -containerName $_
     } 
 
 
