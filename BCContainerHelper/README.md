@@ -42,6 +42,11 @@
 
     Setup-BcContainerTestUsers -containerName $containerName -select Premium -Password $SecurePassword -credential $Credential
 
+### Restart all BcContainers
+     Get-BcContainers | foreach { 
+        Write-Host -ForegroundColor Yellow $_
+        Restart-NavContainer -containerName $_
+    } 
 
 
 ## App Management
