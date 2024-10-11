@@ -1,0 +1,19 @@
+// Count of eventId by Day
+
+traces
+//| where timestamp >= ago(24d)
+//| where tostring(customDimensions.eventId) == 'RT0008'
+| where isnotempty(customDimensions.aadTenantId)
+//| where isnotempty(customDimensions.eventId)
+| extend
+     companyName = tostring(customDimensions.companyName)
+    ,EventId = tostring(customDimensions.eventId)
+    ,Day = format_datetime(timestamp,"yyyy-MM-dd")
+| project
+    timestamp,
+    companyName,
+    customDimensions,
+    Day,
+    EventId
+| summarize count = count() by EventId, Day, companyName
+| order by companyName, Day desc, EventId asc
