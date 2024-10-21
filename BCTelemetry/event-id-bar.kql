@@ -4,10 +4,8 @@ traces
 | where isnotempty(customDimensions.aadTenantId)
 | extend
     companyName = tostring(customDimensions.companyName)
-    ,
-    EventId = tostring(customDimensions.eventId)
-    ,
-    Day = format_datetime(timestamp, "yyyy-MM-dd")
+    ,EventId = tostring(customDimensions.eventId)
+    ,Day = format_datetime(timestamp, "yyyy-MM-dd")
 | project
     timestamp,
     companyName,
