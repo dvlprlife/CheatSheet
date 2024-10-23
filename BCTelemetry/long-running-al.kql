@@ -4,12 +4,14 @@ traces
 | where timestamp > ago(24h)
 | where customDimensions has 'RT0018'
 | where customDimensions.eventId == 'RT0018'
+// | where customDimensions.eventId in ('RT0018','RT0005','RT0012')
 | where customDimensions.alObjectId > 0
 | project
     timestamp = timestamp
     ,environmentName = customDimensions.environmentName
     ,environmentType = customDimensions.environmentType
     ,companyName = customDimensions.companyName
+    ,eventId = customDimensions.eventId
     ,alMethod = customDimensions.alMethod
     ,alObjectId = customDimensions.alObjectId
     ,alObjectName = customDimensions.alObjectName
