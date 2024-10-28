@@ -1,5 +1,8 @@
 // Last Long running AL methods
 // reference https://github.com/waldo1001/waldo.BCTelemetry/blob/master/Performance/SlowRunningAL/LastLongRunningAL.kql
+// RT0005 - Performance - Operation exceeded time threshold (SQL query)
+// RT0012 - Performance - Database lock timed out
+// RT0018 - Performance - Operation exceeded time threshold (AL method)
 traces
 | where timestamp > ago(24h)
 | where customDimensions has 'RT0018'
