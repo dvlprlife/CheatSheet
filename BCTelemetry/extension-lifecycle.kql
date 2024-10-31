@@ -1,0 +1,28 @@
+// extension lifecycle events
+traces
+| where timestamp > ago(30d)
+// LC0010 Extension installed successfully: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId})
+// LC0011 Extension failed to install: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId})
+// LC0012 Extension synchronized successfully: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId}
+// LC0013 Extension failed to synchronize: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId})
+// LC0014 Extension published successfully: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId})
+// LC0015 Extension failed to publish: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId})
+// LC0016 Extension un-installed successfully: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId})
+// LC0017 Extension failed to un-install: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId})
+// LC0018 Extension unpublished successfully: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId})
+// LC0019 Extension failed to un-publish: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId})
+// LC0020 Extension compiled successfully: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId})
+// LC0021 Extension failed to compile: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId})
+// LC0022 Extension updated successfully: {extensionName} version {extensionVersion} by {extensionPublisher}
+// LC0023 Extension failed to update: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId})
+| where customDimensions.eventId in ('LC0010','LC0011','LC0012''LC0013','LC0014','LC0015','LC0016','LC0017','LC0018''LC0019','LC0020','LC0021','LC0022','LC0023')
+| project
+    timestamp = timestamp
+    ,environmentType = customDimensions.environmentType
+    ,eventId = customDimensions.eventId
+    ,extensionId = customDimensions.extensionId
+    ,extensionName = customDimensions.extensionName
+    ,extensionPublisher = customDimensions.extensionPublisher
+    ,extensionVersion = customDimensions.extensionVersion
+| order by timestamp desc
+| take 100
