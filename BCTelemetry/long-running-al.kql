@@ -21,12 +21,10 @@ traces
     ,alObjectType = customDimensions.alObjectType
     ,alStackTrace = customDimensions.alStackTrace
     ,clientType = customDimensions.clientType
-    // exclusiveTime is the execution time of the operation, without the time where AL execution was suspended due to client callback
     ,exclusiveTime = customDimensions.exclusiveTime // This dimension was introduced in Business Central 2023 release wave 1, version 22.1. Backported to version 21.6
-    // exclusiveTime is the total time of the operation, including wait time due to client callback
     ,totalTime = customDimensions.executionTime
     ,extensionId = customDimensions.extensionId
-    ,extensionInfo = customDimensions.extensionInfo // parse this json structure to find out if other extensions is involved
+    ,extensionInfo = customDimensions.extensionInfo
     ,extensionName = customDimensions.extensionName
     ,extensionPublisher = customDimensions.extensionPublisher
     ,extensionVersion = customDimensions.extensionVersion

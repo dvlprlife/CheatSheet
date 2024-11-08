@@ -1,0 +1,32 @@
+// job queue events
+// https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/telemetry-job-queue-lifecycle-trace
+// AL0000FNY - Job queue entry failed to be enqueued
+// AL0000HE7 - Job queue entry failed (might be retried)
+// AL0000FMG - Job queue entry run once by a user
+// AL0000JRG - Job queue entry failed for the last time and is set to stopped
+traces
+| where timestamp > ago(24h)
+| where customDimensions.eventId in ('AL0000FNY', 'AL0000HE7', 'AL0000FMG', 'AL0000JRG')
+| where customDimensions.alObjectId > 0
+| project
+    timestamp = timestamp
+    ,environmentName = customDimensions.environmentName
+    ,environmentType = customDimensions.environmentType
+    ,companyName = customDimensions.companyName
+    ,alJobQueueScheduledTaskId = customDimensions.alJobQueueScheduledTaskId
+    ,alJobQueueEarliestStartDateTime = customDimensions.alJobQueueEarliestStartDateTime
+    ,alJobQueueId = customDimensions.alJobQueueId
+    ,alJobQueueIsRecurring = customDimensions.alJobQueueIsRecurring
+    ,alJobQueueObjectId = customDimensions.alJobQueueObjectId
+    ,alJobQueueObjectName = customDimensions.alJobQueueObjectName
+    ,alJobQueueObjectType = customDimensions.alJobQueueObjectType
+    ,alJobQueueObjectDescription = customDimensions.alJobQueueObjectDescription
+    ,alJobQueueStackTrace = customDimensions.alJobQueueStackTrace
+    ,eventId = customDimensions.eventId
+    ,clientType = customDimensions.clientType
+    ,extensionId = customDimensions.extensionId
+    ,extensionInfo = customDimensions.extensionInfo
+    ,extensionName = customDimensions.extensionName
+    ,extensionPublisher = customDimensions.extensionPublisher
+    ,extensionVersion = customDimensions.extensionVersion
+| order by timestamp desc

@@ -1,4 +1,5 @@
 // extension lifecycle events
+// https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/telemetry-extension-lifecycle-trace
 traces
 | where timestamp > ago(30d)
 // LC0010 Extension installed successfully: {extensionName} version {extensionVersion} by {extensionPublisher} ({extensionId})
@@ -24,5 +25,10 @@ traces
     ,extensionName = customDimensions.extensionName
     ,extensionPublisher = customDimensions.extensionPublisher
     ,extensionVersion = customDimensions.extensionVersion
+    ,extensionCompilationDependencyList = customDimensions.extensionCompilationDependencyList
+    ,extensionCompilationResult = customDimensions.extensionCompilationResult
+    ,extensionScope = customDimensions.extensionScope
+    ,result = customDimensions.result
+    ,serverExecutionTime = customDimensions.serverExecutionTime
+    ,totalTime = customDimensions.totalTime
 | order by timestamp desc
-| take 100
