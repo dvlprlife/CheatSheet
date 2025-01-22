@@ -11,7 +11,7 @@
  7. [Conditional](#Conditional)
  8. [Logical Operators](#logical-operators)
  9. [Execution Policy](#execution-policy)
-10. [Modules] (#modules)
+10. [Modules](#modules)
 
 ### Scripts
 1. [Rename Files](rename-files.ps1)
