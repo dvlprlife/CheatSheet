@@ -2,15 +2,16 @@
 
 ##  Table of Contents
 ### Snippets
-1. [Credentials](#Credentials)
-2. [Files](#Files)
-3. [Strings](#Strings)
-4. [Dictionaries (key-value)](#Dictionaries-key-value)
-5. [Lists](#Lists)
-6. [Input](#Input)
-7. [Conditional](#Conditional)
-8. [Logical Operators](#logical-operators)
-9. [Execution Policy](#execution-policy)
+ 1. [Credentials](#Credentials)
+ 2. [Files](#Files)
+ 3. [Strings](#Strings)
+ 4. [Dictionaries (key-value)](#Dictionaries-key-value)
+ 5. [Lists](#Lists)
+ 6. [Input](#Input)
+ 7. [Conditional](#Conditional)
+ 8. [Logical Operators](#logical-operators)
+ 9. [Execution Policy](#execution-policy)
+10. [Modules] (#modules)
 
 ### Scripts
 1. [Rename Files](rename-files.ps1)
@@ -145,3 +146,8 @@
     Get-ExecutionPolicy -List
     Set-ExecutionPolicy -ExecutionPolicy (AllSigned|Bypass|Default|RemoteSigned|Undefined|Unrestricted) -Scope (CurrentUser|LocalMachine|MachinePolicy|Process|UserPolicy)
 
+## Modules
+### List Available Modules
+     Get-Module -ListAvailable
+### List Module Path
+     (Get-Module -ListAvailable -Name <ModuleName>).ModuleBase
