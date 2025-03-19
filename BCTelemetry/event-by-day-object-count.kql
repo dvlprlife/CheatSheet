@@ -1,0 +1,9 @@
+traces
+| project 
+    environmentType = customDimensions.environmentType
+    ,day = format_datetime(timestamp,"yyyy-MM-dd")
+    ,eventId = tostring(customDimensions.eventId)
+    ,message = message
+    ,alObjectId = tostring(customDimensions.alObjectId)
+| summarize count = count() by day, eventId, message, alObjectId
+| order by day desc, eventId
