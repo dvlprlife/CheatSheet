@@ -8,7 +8,7 @@ source
     // RT0006 Report rendering failed: {report ID} - {report name}
     (tostring(Properties.eventId) <> 'RT0006' or tostring(Properties.alObjectId) <> '1320') and
     // RT0030 Error dialog displayed: {errorMessage}
-    (tostring(Properties.eventId) <> 'RT0030' or tostring(Message) !startswith 'Error dialog shown:' or Properties has 'alErrorMessage') and
+    (tostring(Properties.eventId) <> 'RT0030' or tostring(Message) !startswith 'Error dialog shown:' or Properties !has 'alErrorMessage') and
     // LC0042 Task {taskId} removed: {codeunitObjectId}.
     (tostring(Properties.eventId) <> 'LC0042' or tostring(Properties.codeunitObjectId) <> '448') and
     // AL0000E24 Job queue entry enqueued: {alJobQueueId}
