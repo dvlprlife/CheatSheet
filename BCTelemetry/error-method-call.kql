@@ -1,0 +1,24 @@
+// Error Method Call
+// RT0030 - Error dialog displayed: {errorMessage}
+traces
+| where customDimensions.eventId in ('RT0030')
+| where customDimensions.alObjectId > 0
+| project
+    timestamp = timestamp
+    ,environmentName = customDimensions.environmentName
+    ,environmentType = customDimensions.environmentType
+    ,companyName = customDimensions.companyName
+    ,eventId = customDimensions.eventId
+    ,alErrorMessage = customDimensions.alErrorMessage            
+    ,alObjectId = customDimensions.alObjectId
+    ,alObjectName = customDimensions.alObjectName
+    ,failureReason = customDimensions.failureReason            
+    ,alStackTrace = customDimensions.alStackTrace
+    ,clientType = customDimensions.clientType
+    ,extensionId = customDimensions.extensionId
+    ,extensionInfo = customDimensions.extensionInfo
+    ,extensionName = customDimensions.extensionName
+    ,extensionPublisher = customDimensions.extensionPublisher
+    ,extensionVersion = customDimensions.extensionVersion
+| order by timestamp desc
+
