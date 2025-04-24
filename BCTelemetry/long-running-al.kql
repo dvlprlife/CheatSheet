@@ -4,7 +4,7 @@
 // RT0012 - Performance - Database lock timed out
 // RT0018 - Performance - Operation exceeded time threshold (AL method)
 traces
-| where timestamp > ago(24h)
+//| where timestamp > ago(24h)
 | where customDimensions has 'RT0018'
 | where customDimensions.eventId == 'RT0018'
 // | where customDimensions.eventId in ('RT0018','RT0005','RT0012')
