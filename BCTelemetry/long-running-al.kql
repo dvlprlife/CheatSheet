@@ -1,5 +1,6 @@
 // Last Long running AL methods
 // reference https://github.com/waldo1001/waldo.BCTelemetry/blob/master/Performance/SlowRunningAL/LastLongRunningAL.kql
+// reference https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/telemetry-al-method-trace
 // RT0005 - Performance - Operation exceeded time threshold (SQL query)
 // RT0012 - Performance - Database lock timed out
 // RT0018 - Performance - Operation exceeded time threshold (AL method)
@@ -31,5 +32,7 @@ traces
     ,longRunningThreshold = customDimensions.longRunningThreshold
     ,sqlExecutes = customDimensions.sqlExecutes // This dimension was introduced in Business Central 2023 release wave 1, version 22.0
     ,sqlRowsRead = customDimensions.sqlRowsRead // This dimension was introduced in Business Central 2023 release wave 1, version 22.0
-| order by timestamp desc
+    ,usertelemetryId = case(toint(substring(customDimensions.componentVersion,0,2)) >= 20, user_Id, 'N/A') // user telemetry id was introduced in the platform in version 20.0
+//| order by timestamp desc
+| order by toint(sqlRowsRead) desc
 | take 100
