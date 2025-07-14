@@ -9,18 +9,20 @@
     b. [List All Containers](#list-all-containers)
 
     c. [List Stopped Containers](#list-stopped-containers)
+   
+    d. [List Docker Images](#list-docker-images)
+   
+    e. [Copy Files/Folders to Container](#copy-filesfolders-between-a-container-and-the-local-filesystem)
 
-    d. [Copy Files/Folders to Container](#copy-filesfolders-between-a-container-and-the-local-filesystem)
+    f. [Start Container](#start-container)
 
-    e. [Start Container](#start-container)
+    g. [Stop Container](#stop-container)
 
-    f. [Stop Container](#stop-container)
+    h. [Restart Container](#restart-container)
 
-    g. [Restart Container](#restart-container)
-
-    h. [Remove Container](#remove-container)
+    i. [Remove Container](#remove-container)
     
-2. [Misc](#Misc)
+3. [Misc](#Misc)
 
     a. [HyperV](#HyperV)
 
@@ -29,14 +31,17 @@
 ## Docker Containers
 
 ### List Running Containers
-    docker container ls
+    docker container ps
 
 ### List All Containers
-    docker container ls -a
+    docker container ps -a
 
 ### List Stopped Containers
     docker container ls -f "status=exited"
 
+### List Docker Images
+    docker image ls
+    
 ### Copy files/folders between a container and the local filesystem
     docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
 
