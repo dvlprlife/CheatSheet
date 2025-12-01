@@ -16,6 +16,7 @@ source
     // AL0000E24 Job queue entry enqueued: {alJobQueueId}
     // AL0000E25 Job queue entry started: {alJobQueueId}
     // AL0000E26 Job queue entry finished: {alJobQueueId}
+    // AL0000CTQ Feature Emailing is Discovered
     // AL0000CTV Email sent successfully
     // AL0000FMG Running job queue once
     // AL0000CST Purchase document posted: *
@@ -23,8 +24,9 @@ source
     // AL0000GDP Feature Workflows is Used
     // AL0000KZV Job queue entry task cancelled:
     // AL0000LA2 Field added to changelog configuration
+    // AL0000MEM Automatic cost adjustment was used.
     // LC0040 Task {taskId} created: {codeunitObjectId} scheduled to run after {notBefore}. Ready to run: {isReady}
     // LC0041 Task {taskId} ready: {codeunitObjectId} set ready to run after {notBefore}.
     // LC0057 Task {taskId} timeout changed to: {timeout} because it was exceeding the max timeout value.
-    tostring(Properties.eventId) !in ('AL0000E24', 'AL0000E25', 'AL0000E26', 'AL0000CTV', 'AL0000FMG', 'AL0000CST', 'AL0000CSU', 'AL0000GDP', 'AL0000KZV', 'AL0000LA2', 'LC0040', 'LC0041', 'LC0057') and
+    tostring(Properties.eventId) !in ('AL0000E24', 'AL0000E25', 'AL0000E26', 'AL0000CTQ', 'AL0000CTV', 'AL0000FMG', 'AL0000CST', 'AL0000CSU', 'AL0000GDP', 'AL0000KZV', 'AL0000LA2', 'AL0000MEM','LC0040', 'LC0041', 'LC0057') and
     tostring(Properties.environmentType) == 'Production'
