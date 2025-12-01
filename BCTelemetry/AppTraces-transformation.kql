@@ -33,7 +33,6 @@ source
     // LC0040 Task {taskId} created: {codeunitObjectId} scheduled to run after {notBefore}. Ready to run: {isReady}
     // LC0041 Task {taskId} ready: {codeunitObjectId} set ready to run after {notBefore}.
     // LC0057 Task {taskId} timeout changed to: {timeout} because it was exceeding the max timeout value.
-    tostring(Properties.eventId) !in ('AL0000E24', 'AL0000E25', 'AL0000E26', 'AL0000CTA', 'AL0000CTQ', 'AL0000JLL', 'AL0000IOJ
-', 'AL0000HUU', 'AL0000LH4', 'AL0000CTV', 'AL0000FMG', 'AL0000CST') and
-    tostring(Properties.eventId) !in () and 'AL0000CSU', 'AL0000GDP', 'AL0000KZV', 'AL0000LA2', 'AL0000MEM', 'LC0040', 'LC0041', 'LC0057'
+    tostring(Properties.eventId) !in ('AL0000E24', 'AL0000E25', 'AL0000E26', 'AL0000CTA', 'AL0000CTQ', 'AL0000JLL', 'AL0000IOJ', 'AL0000HUU', 'AL0000LH4', 'AL0000CTV') and
+    tostring(Properties.eventId) !in ('AL0000FMG', 'AL0000CST', 'AL0000CSU', 'AL0000GDP', 'AL0000KZV', 'AL0000LA2', 'AL0000MEM', 'LC0040', 'LC0041', 'LC0057') and
     tostring(Properties.environmentType) == 'Production'
