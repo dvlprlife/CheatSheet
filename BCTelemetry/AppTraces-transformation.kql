@@ -6,7 +6,7 @@ source
     // RT0004 Authorization Succeeded (Open Company)
     (tostring(Properties.eventId) <> 'RT0004') and
     // RT0006 Report rendering failed: {report ID} - {report name}
-    (tostring(Properties.eventId) <> 'RT0006' or tostring(Properties.alObjectId) <> '1320') and
+    (tostring(Properties.eventId) <> 'RT0006' or tostring(Message) !startswith 'Report rendered:') and
     // RT0008 Incoming Web service requests
     (tostring(Properties.eventId) <> 'RT0008') and
     // RT0030 Error dialog displayed: {errorMessage}
@@ -28,5 +28,5 @@ source
     // LC0040 Task {taskId} created: {codeunitObjectId} scheduled to run after {notBefore}. Ready to run: {isReady}
     // LC0041 Task {taskId} ready: {codeunitObjectId} set ready to run after {notBefore}.
     // LC0057 Task {taskId} timeout changed to: {timeout} because it was exceeding the max timeout value.
-    tostring(Properties.eventId) !in ('AL0000E24', 'AL0000E25', 'AL0000E26', 'AL0000CTQ', 'AL0000CTV', 'AL0000FMG', 'AL0000CST', 'AL0000CSU', 'AL0000GDP', 'AL0000KZV', 'AL0000LA2', 'AL0000MEM','LC0040', 'LC0041', 'LC0057') and
+    tostring(Properties.eventId) !in ('AL0000E24', 'AL0000E25', 'AL0000E26', 'AL0000CTQ', 'AL0000CTV', 'AL0000FMG', 'AL0000CST', 'AL0000CSU', 'AL0000GDP', 'AL0000KZV', 'AL0000LA2', 'AL0000MEM', 'LC0040', 'LC0041', 'LC0057') and
     tostring(Properties.environmentType) == 'Production'
