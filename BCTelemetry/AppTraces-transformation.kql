@@ -16,7 +16,12 @@ source
     // AL0000E24 Job queue entry enqueued: {alJobQueueId}
     // AL0000E25 Job queue entry started: {alJobQueueId}
     // AL0000E26 Job queue entry finished: {alJobQueueId}
+    // AL0000CTA Feature Emailing is Discovered
     // AL0000CTQ Feature Emailing is Discovered
+    // AL0000JLL Feature Bank reconciliation is Discovered
+    // AL0000IOJ Feature Data Search is Discovered
+    // AL0000HUU Feature Shopify is Discovered
+    // AL0000LH4 Feature Error Messages with Recommended Actions is Discovered
     // AL0000CTV Email sent successfully
     // AL0000FMG Running job queue once
     // AL0000CST Purchase document posted: *
@@ -28,5 +33,7 @@ source
     // LC0040 Task {taskId} created: {codeunitObjectId} scheduled to run after {notBefore}. Ready to run: {isReady}
     // LC0041 Task {taskId} ready: {codeunitObjectId} set ready to run after {notBefore}.
     // LC0057 Task {taskId} timeout changed to: {timeout} because it was exceeding the max timeout value.
-    tostring(Properties.eventId) !in ('AL0000E24', 'AL0000E25', 'AL0000E26', 'AL0000CTQ', 'AL0000CTV', 'AL0000FMG', 'AL0000CST', 'AL0000CSU', 'AL0000GDP', 'AL0000KZV', 'AL0000LA2', 'AL0000MEM', 'LC0040', 'LC0041', 'LC0057') and
+    tostring(Properties.eventId) !in ('AL0000E24', 'AL0000E25', 'AL0000E26', 'AL0000CTA', 'AL0000CTQ', 'AL0000JLL', 'AL0000IOJ
+', 'AL0000HUU', 'AL0000LH4', 'AL0000CTV', 'AL0000FMG', 'AL0000CST') and
+    tostring(Properties.eventId) !in () and 'AL0000CSU', 'AL0000GDP', 'AL0000KZV', 'AL0000LA2', 'AL0000MEM', 'LC0040', 'LC0041', 'LC0057'
     tostring(Properties.environmentType) == 'Production'
