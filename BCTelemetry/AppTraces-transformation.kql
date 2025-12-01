@@ -6,7 +6,7 @@ source
     // RT0004 Authorization Succeeded (Open Company)
     (tostring(Properties.eventId) <> 'RT0004') and
     // RT0006 Report rendering failed: {report ID} - {report name}
-    (tostring(Properties.eventId) <> 'RT0006' or tostring(Message) !startswith 'Report rendered:') and
+    (tostring(Properties.eventId) <> 'RT0006' or tostring(Message) startswith 'Report rendering failed:') and
     // RT0008 Incoming Web service requests
     (tostring(Properties.eventId) <> 'RT0008') and
     // RT0030 Error dialog displayed: {errorMessage}
