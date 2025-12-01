@@ -7,6 +7,8 @@ source
     (tostring(Properties.eventId) <> 'RT0004') and
     // RT0006 Report rendering failed: {report ID} - {report name}
     (tostring(Properties.eventId) <> 'RT0006' or tostring(Properties.alObjectId) <> '1320') and
+    // RT0008 Incoming Web service requests
+    (tostring(Properties.eventId) <> 'RT0008') and
     // RT0030 Error dialog displayed: {errorMessage}
     (tostring(Properties.eventId) <> 'RT0030' or tostring(Message) !startswith 'Error dialog shown:' or Properties !has 'alErrorMessage') and
     // LC0042 Task {taskId} removed: {codeunitObjectId}.
