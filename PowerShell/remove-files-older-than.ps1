@@ -3,13 +3,13 @@
   Function to remove files older than a specified age
  .DESCRIPTION
   Removes files from the supplied folder (recursively) when their last write time is older than the supplied number of hours.
-  .PARAMETER sourcePath
+ .PARAMETER sourcePath
   The full path to a folder to process.
-    .PARAMETER olderThanHours
-    Number of hours a file must be older than to match the filter.
-    .PARAMETER action
-    Choose whether matching files are printed or removed.
-  .EXAMPLE
+ .PARAMETER olderThanHours
+  Number of hours a file must be older than to match the filter.
+ .PARAMETER action
+  Choose whether matching files are printed or removed.
+ .EXAMPLE
   remove-files-older-than 'D:\Archive\' 1200
   remove-files-older-than -sourcePath 'D:\Archive\' -olderThanHours 1200 -action Remove
  #>

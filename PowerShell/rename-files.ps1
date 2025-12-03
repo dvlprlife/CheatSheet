@@ -36,7 +36,7 @@ Function rename-files {
 
                     # if it is a directory and only changing case an error will occur
                     # rename to a temp filename and rename it to the lowercase name
-                    if ($currentItem.Name -eq $newName) {
+                    if ($currentItem.Name -ceq $newName) {
                         $randomname = [System.IO.Path]::GetRandomFileName()
                         $tempItem = Rename-Item -Path $currentItem.FullName -NewName $randomname -PassThru
                         $currentItem = Rename-Item -Path $tempItem.FullName -NewName $newName -PassThru
