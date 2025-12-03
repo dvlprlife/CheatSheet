@@ -1,14 +1,16 @@
 <#
  .SYNOPSIS
-  Function to list files less than or equal to a specified size
+  Function to list files filtered by a size comparison
  .DESCRIPTION
-  This function lists files less than or equal to a specified size.
+  This function lists files whose size satisfies the provided comparison (less than or equal, or greater than or equal) against the specified threshold.
   .PARAMETER sourcePath
-  The full path to a folder to proces.
-  .PARAMETER maxSize
-  The size that a file must be less than or equal to in order to be listed.
+  The full path to a folder to process.
+  .PARAMETER sizeThreshold
+  The size, in bytes, a file must be compared against.
+  .PARAMETER comparison
+  Determines whether files are returned when their size is less than or equal, or greater than or equal, to the threshold.
   .EXAMPLE
-  Get-FileListSize -sourcePath 'c:\windows\temp\' -maxSize -0
+  Get-FileListSize -sourcePath 'c:\windows\temp\' -sizeThreshold 1048576 -comparison LessOrEqual
  #>
 
 Function Get-FileListSize {
@@ -16,12 +18,20 @@ Function Get-FileListSize {
         [Parameter(Mandatory = $true)]
         [string]$sourcePath,
         [Parameter(Mandatory = $true)]
-        [int16]$maxSize
+        [long]$sizeThreshold,
+        [ValidateSet('LessOrEqual', 'GreaterOrEqual')]
+        [string]$comparison = 'LessOrEqual'
     )
 
-    Get-Childitem $sourcePath -Recurse | foreach-object {
-        if (!$_.PSIsContainer -and $_.length -le $maxSize) {
-            write-host (“{0} {1}” -f $_.FullName, $_.Length)
+    Get-ChildItem -Path $sourcePath -Recurse | Where-Object { -not $_.PSIsContainer } | ForEach-Object {
+        $matchesThreshold = switch ($comparison) {
+            'LessOrEqual' { $_.Length -le $sizeThreshold }
+            'GreaterOrEqual' { $_.Length -ge $sizeThreshold }
+            default { $false }
+        }
+
+        if ($matchesThreshold) {
+            Write-Host ("{0} {1}" -f $_.FullName, $_.Length)
         }
     }
 }
