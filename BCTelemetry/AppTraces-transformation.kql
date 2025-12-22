@@ -22,6 +22,8 @@ source
     // AL0000KMT Feature Dataverse Base Entities is Used
     // AL0000IOJ Feature Data Search is Discovered
     // AL0000H7N Entity sync
+    // AL0000OCP Delete Attachment From Production BOM Header
+    // AL0000OCE Feature Production Document Attachment is Used
     // AL0000H7O Base entity synch
     // AL0000H7M Feature Dataverse is Used
     // AL0000HUU Feature Shopify is Discovered
@@ -43,5 +45,5 @@ source
     // LC0057 Task {taskId} timeout changed to: {timeout} because it was exceeding the max timeout value.
     tostring(Properties.eventId) !in ('AL0000E24', 'AL0000E25', 'AL0000E26', 'AL0000CTA', 'AL0000CTQ', 'AL0000JLL', 'AL0000IOJ', 'AL0000HUU', 'AL0000LH4', 'AL0000CTV') and
     tostring(Properties.eventId) !in ('AL0000FMG', 'AL0000CST', 'AL0000CSU', 'AL0000GDP', 'AL0000KZV', 'AL0000LA2', 'AL0000MEM', 'LC0040', 'LC0041', 'LC0057') and
-    tostring(Properties.eventId) !in ('AL0000H7N', 'AL0000KMT', 'AL0000H7O', 'AL0000H7M', 'AL0000IIL', 'AL0000LCP', 'AL0000LCR','AL0000OUA') and
+    tostring(Properties.eventId) !in ('AL0000H7N', 'AL0000KMT', 'AL0000H7O', 'AL0000H7M', 'AL0000IIL', 'AL0000LCP', 'AL0000LCR', 'AL0000OUA', 'AL0000OCP', 'AL0000OCE') and
     tostring(Properties.environmentType) == 'Production'
